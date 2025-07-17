@@ -81,11 +81,11 @@ spec:
           enabled: false
           prometheusEndpoint: ""
         servicesQueryDuration: 72h0m0s
-  tenants:
+  tenants: # Configuración de tenants para TempoStack. Para implementación deben establecerse dos, acorde a la documentación del operador en RedHat
     authentication:
-    - tenantId: prod
-      tenantName: prod
-    - tenantId: prod2
-      tenantName: prod2
+    - tenantId: ${TEMPO_TENANT_NAME}-0
+      tenantName: ${TEMPO_TENANT_NAME}-0 # El valor del tenant en TempoStack es arbitrario. Debe coincidir con el nombre del tenant en el OpenTelemetryCollector
+    - tenantId: ${TEMPO_TENANT_NAME}-1
+      tenantName: ${TEMPO_TENANT_NAME}-1
     mode: openshift
   timeout: 30s
