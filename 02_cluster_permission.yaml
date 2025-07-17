@@ -40,8 +40,8 @@ rules:
   - apiGroups:
       - 'tempo.grafana.com'
     resources: 
-      - prod
-      - prod2
+      - ${TEMPO_TENANT_NAME}-0
+      - ${TEMPO_TENANT_NAME}-1
     resourceNames:
       - traces
     verbs:
@@ -58,4 +58,5 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: otel-collector 
-    namespace: tempostack-prod
+    namespace: ${TEMPO_STACK_NAMESPACE}
+
