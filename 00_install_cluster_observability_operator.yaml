@@ -1,0 +1,14 @@
+# Instalar Cluster Observability Operator desde la WebConsole de OpenShift.
+# 1. Ir a la sección de Operators en la WebConsole.
+# 2. Buscar "Cluster Observability Operator" y proceder a su instalación.
+# 3. Asegurarse de que el operador esté instalado en el namespace `openshift-operators`.
+
+# Se hace referencia a la instalación del Cluster Observability Operator para gestionar la observabilidad en el cluster de OpenShift.
+#https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html/cluster_observability_operator/observability-ui-plugins#distributed-tracing-ui-plugin
+
+apiVersion: observability.openshift.io/v1alpha1
+kind: UIPlugin
+metadata:
+  name: distributed-tracing
+spec:
+  type: DistributedTracing
